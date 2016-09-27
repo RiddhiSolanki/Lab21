@@ -1,0 +1,43 @@
+﻿@model Lab21.Models.Response
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <h1>Welcome to Grand Chiprus Dojo!!!!</h1>
+        @using (Html.BeginForm())
+        {
+            <p>First Name:@Html.TextBoxFor(x => x.FirstName)</p>
+            <p>Last Name: @Html.TextBoxFor(x => x.LastName) </p>    
+            <p>&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.TextBoxFor(x => x.Email)&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.TextBoxFor(x => x.Phone)&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.TextBoxFor(x => x.Address)&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.DropDownListFor(x => x.Gender, new[]
+        {
+         new SelectListItem() {Text = "Male"},
+         new SelectListItem() {Text = "Female"} }, "")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>
+                Terms and Conditions:You have to be really a cool person to be prepared to become an awesome developer.
+            </p>
+            <br />
+            <p>Do you agree to the terms and conditions?    
+            @Html.DropDownListFor(x=> x.Agree, new []
+        {
+         new SelectListItem() {Text = "Yes, I agree.", Value= bool.TrueString },
+         new SelectListItem() {Text = "No, I do not agree.", Value= bool.FalseString } },"")
+        </p>
+        <input type="Submit" value="Submit Registration" />
+
+        }</center>
+    </div>
+</body>
+</html>

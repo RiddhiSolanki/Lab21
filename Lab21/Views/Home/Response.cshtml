@@ -1,0 +1,35 @@
+﻿@model Lab21.Models.Response
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Response</title>
+</head>
+<body>
+    <div>
+        @if(Model.Agree == true)
+        {
+            @:<h1>Thank You for your Response.@Model.FirstName!</h1>
+            @: We will be glad to see you! Here is your Profile:
+            <p>First Name:@Model.FirstName</p>
+            <p>Last Name: @Model.LastName</p>
+            <p>Email:     @Model.Email</p>
+            <p>Phone:     @Model.Phone</p>
+            <p>Address:   @Model.Address</p>
+            <p>Gender:    @Model.Gender</p>
+            
+         }
+         else
+         {
+             @:<h1/>We wish you could have been a part of it.
+         }
+
+    </div>
+</body>
+</html>
